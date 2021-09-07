@@ -4,7 +4,6 @@
 // Rollen von Variablen?
 
 $numbers = array_slice($argv, 1);
-$numbers = array(1,3,11,6,11,5,11,34);
 
 $nth_max = 2;
 
