@@ -1,7 +1,20 @@
 #!/usr/bin/php
 <?php
 
-// Rollen von Variablen?
+/*
+ * Roles of Variables:
+ * 
+ * - $argv:				Fixed value
+ * - $numbers:			Container / Fixed value
+ * - $max_numbers
+ * 		- ['number']:	Fixed value
+ * 		- ['count']:	Gatherer
+ * - $n:				Most-recent holder
+ * - $i:				Stepper
+ * - $mn:				Most-wanted holder
+ * - $nth_string:		Fixed value
+ * 
+ */
 
 const NTH_MAX = 2;
 
