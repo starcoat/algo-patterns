@@ -3,9 +3,9 @@
 
 // Rollen von Variablen?
 
-$numbers = array_slice($argv, 1);
+const NTH_MAX = 2;
 
-$nth_max = 2;
+$numbers = array_slice($argv, 1);
 
 $max_numbers = array();
 $max_numbers[] = array(
@@ -30,7 +30,7 @@ foreach ($numbers as $n) {
 				array_slice($max_numbers, $i)
 			);
 
-			if (count($max_numbers) > $nth_max) {
+			if (count($max_numbers) > NTH_MAX) {
 				array_pop($max_numbers);
 			}
 			break;
@@ -47,21 +47,21 @@ foreach ($numbers as $n) {
 }
 
 
-if ($nth_max == 1) {
+if (NTH_MAX == 1) {
 	$nth_string = '';
-} elseif (substr($nth_max, -2) == '01') {
-	$nth_string = $nth_max . 'st ';
-} elseif (($nth_max == 2) OR (substr($nth_max, -2) == '02')) {
-	$nth_string = $nth_max . 'nd ';
-} elseif (($nth_max == 3) OR (substr($nth_max, -2) == '03')) {
-	$nth_string = $nth_max . 'rd ';
+} elseif (substr(NTH_MAX, -2) == '01') {
+	$nth_string = NTH_MAX . 'st ';
+} elseif ((NTH_MAX == 2) OR (substr(NTH_MAX, -2) == '02')) {
+	$nth_string = NTH_MAX . 'nd ';
+} elseif ((NTH_MAX == 3) OR (substr(NTH_MAX, -2) == '03')) {
+	$nth_string = NTH_MAX . 'rd ';
 } else {
-	$nth_string = $nth_max . 'th ';
+	$nth_string = NTH_MAX . 'th ';
 }
 
 printf("The %slargest number %d appeared %d %s.\n",
 	$nth_string,
-	$max_numbers[$nth_max - 1]['number'],
-	$max_numbers[$nth_max - 1]['count'],
-	($max_numbers[$nth_max - 1]['count'] == 1) ? 'time' : 'times'
+	$max_numbers[NTH_MAX - 1]['number'],
+	$max_numbers[NTH_MAX - 1]['count'],
+	($max_numbers[NTH_MAX - 1]['count'] == 1) ? 'time' : 'times'
 );
