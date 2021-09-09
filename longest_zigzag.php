@@ -1,12 +1,24 @@
 #!/usr/bin/php
 <?php
 
-$numbers = array_slice($argv, 1);
+/*
+ * Roles of Variables:
+ * 
+ * - $argv:			Fixed value
+ * - $numbers:		Container / Fixed value
+ * - $cur_length:	Stepper
+ * - $max_length:	Most-wanted holder
+ * - $next:			Temporary
+ * - $last:			Follower
+ * - $n:			Most-recent holder
+ * 
+ */
 
+$numbers = array_slice($argv, 1);
 
 $cur_length = 0;
 $max_length = 0;
-$next = 'ANY'; // 'ANY' | 'GOL' (Greater or Lower) | 'GTR' | 'LWR'
+$next = 'ANY'; // 'ANY' | 'GOL' (Greater or Lower) | 'GTR' (Greater) | 'LWR' (Lower)
 $last = null;
 
 foreach ($numbers as $n) {
